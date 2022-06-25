@@ -48,6 +48,7 @@ export default function Home() {
     if (chainIndex == -1) // chain not supported
       return
 
+    // get signature from the user to prove ownerhsip of the account
     const signer = web3React.library.getSigner()
     let signature;
     try {
@@ -59,28 +60,38 @@ export default function Home() {
       return     
     }
 
+    // Fetch data from server side for account
+    const response = await fetch('/api/data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chainId: web3React.chainId,
+        address: web3React.account,
+        signature: signature,        
+      }),
+    })
+    const data = await response.json()
+    if (data.error) {
+      console.log(data.error)
+      return
+    }
+
+    // Add account to list
     const newAccount = {
       chainId: web3React.chainId,
       address: web3React.account,
       network: chains[chainIndex].label,
       logo: chains[chainIndex].logo_url,
       isTest: chains[chainIndex].is_testnet,
-      signature: signature,
+      walletSig: signature,
+      creationTime: data.creationTime,
+      transactionCount: data.transactionCount,
+      balanceAmount: data.balanceAmount,
+      dataSig: data.signature,
     }
-
-    // const res = await fetch('/api/hello', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     chainId: web3React.chainId,
-    //     address: web3React.account,
-    //     network: web3React.networkName,
-    //   })
-    // })
-    // const data = await res.json()
-
+    console.log(newAccount)
     setAccounts(accounts.concat(newAccount))
   }
 

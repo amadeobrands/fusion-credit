@@ -4,12 +4,10 @@ export default function handler(req, res) {
     return
   }
 
-  // expect {chainId, address, signature}
-  const body = JSON.parse(req.body)
-
-  result = {
-    chainId: body.chainId,
-    address: body.address,
+  // expect req.body to be like {chainId, address, signature}
+  const result = {
+    chainId: req.body.chainId,
+    address: req.body.address,
     creationTime: Date.now() - 3600 * 24 * 365,
     transactionCount: 200,
     balanceAmount: 700,
