@@ -4,7 +4,13 @@
     "description": "Universal reputation score with privacy in mind",
     "main": "index.js",
     "scripts": {
-        "test": "npx hardhat test"
+        "compile": "npx hardhat compile",
+        "deploy": "npx hardhat deploy",
+        "test": "npx hardhat test",
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
     },
     "dependencies": {
         "next": "12.1.6",
