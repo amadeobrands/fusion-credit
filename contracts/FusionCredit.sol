@@ -7,6 +7,7 @@ interface IVerifier {
 }
 
 contract FusionCredit {
+    address owner;
     IVerifier public verifier;
     mapping(address => ScoreData) public scores;
 
@@ -16,11 +17,17 @@ contract FusionCredit {
         uint48 timestamp;
     }
 
+   modifier onlyOwner {
+      require(msg.sender == owner);
+      _;
+   }
+
     constructor(IVerifier _verifier) {
+        owner = msg.sender;
         verifier = _verifier;
     }
 
-    function setVerifier(IVerifier _verifier) public {
+    function setVerifier(IVerifier _verifier) public onlyOwner {
         verifier = _verifier;
     }
 
