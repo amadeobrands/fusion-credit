@@ -2,10 +2,8 @@
 pragma solidity ^0.8.0;
 
 interface IVerifier {
-    struct Proof {
-        uint[8] data;
-    }
-    function verify(uint[] memory input, Proof memory proof) external view returns (uint);
+    function verifyProof(uint[2] memory a, uint[2][2] memory b, uint[2] memory c, 
+        uint[3] memory input) external view returns (bool r);
 }
 
 contract FusionCredit {
@@ -39,11 +37,11 @@ contract FusionCredit {
         require(timestamp > scoreData.timestamp, "Can't use earlier timestamp");
         require(timestamp <= block.timestamp, "Can't use future timestamp");
 
-        // uint[] memory input = new uint[](3);
-        // input[0] = timestamp;
-        // input[1] = version;
-        // input[2] = score;
-        // require(verifier.verify(input, IVerifier.Proof(proof)) == 0, "Proof not valid");
+        uint[3] memory input = [score, version, timestamp];
+        uint[2] memory a = [proof[0], proof[1]];
+        uint[2][2] memory b = [[proof[2], proof[3]], [proof[4], proof[5]]];
+        uint[2] memory c = [proof[6], proof[7]];
+        require(verifier.verifyProof(a, b, c, input), "Proof not valid");
 
         scores[msg.sender] = ScoreData(uint16(score), uint16(version), uint48(timestamp));
     }

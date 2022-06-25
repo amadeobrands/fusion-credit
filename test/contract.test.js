@@ -9,7 +9,7 @@ describe('Contract Tests', function () {
   }
 
   async function fixture() {
-    const verifier = await deploy('FusionScoreV1Verifier')
+    const verifier = await deploy('FusionScoreMockVerifier')
     const fusionCredit = await deploy('FusionCredit', verifier.address)
     return { fusionCredit }
   }
@@ -27,4 +27,3 @@ describe('Contract Tests', function () {
   })
 
 })
-
