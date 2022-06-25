@@ -58,13 +58,13 @@ template FusionScoreV1(n) {
 
     for (var i=0; i<n; i++) {
         longevity[i] = LimitMax(300);
-        longevity[i].in <== (evalTime - creationTime[i]) / 2;
+        longevity[i].in <== (evalTime - creationTime[i]) / 3600 / 24 / 2;
 
         activity[i] = LimitMax(300);
         activity[i].in <== transactionCount[i];
 
         equity[i] = LimitMax(300);
-        equity[i].in <== balanceAmount[i] / 512;
+        equity[i].in <== balanceAmount[i] / 33;
 
         accountScore[i] <== longevity[i].out + activity[i].out + equity[i].out;
 
@@ -73,7 +73,7 @@ template FusionScoreV1(n) {
             assert(accountScore[i] > 0); // Must have at least one valid account
 
             combine[i].score <== accountScore[i];
-            combine[i].accumulator <== 1;
+            combine[i].accumulator <== 1000;
             combine[i].scale <== 1;
         } else {
             combine[i].score <== accountScore[i];
