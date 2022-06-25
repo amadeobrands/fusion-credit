@@ -90,7 +90,8 @@ export default function Home() {
 
         <p className={styles.description}>
           Add all the accounts you have access to create a more accurate Fusion Score.<br/>
-          Fusion Credit uses Zero Knowledge Proof so added accounts are not made public.
+          Fusion Credit uses Zero Knowledge Proof so added accounts are not made public.<br/>
+          To check Fusion Score for any address, click <a href="score">here</a>.
         </p>
 
         <EthAccount showDisconnect={false}/>

@@ -140,3 +140,43 @@
   font-weight: bold;
   font-size: 1.2em;
 }
+
+.formctn {
+  padding: 50px;
+}
+
+.formfieldctn {
+  margin: 15px;
+}
+
+.formfielderr {
+  margin: 2px;
+  color: salmon;
+}
+
+.formfield {
+  padding: 5px;
+  font-size: 1.2em;
+  width: 300px;
+}
+
+.formfield::placeholder {
+  color: lightgray;
+}
+
+.formbuttonctn {
+  text-align: center;
+}
+
+.formbutton {
+  padding: 10px 16px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  width: 150px;
+  height: 50px;
+  font-size: 1.2em;
+  text-align: center;
+  cursor: pointer;
+}
