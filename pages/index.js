@@ -4,6 +4,8 @@ import { useWeb3React } from "@web3-react/core"
 import styles from "../styles/Home.module.css"
 import EthAccount from "../components/EthAccount"
 import NetworkAddress from "../components/NetworkAddress"
+import { Contract } from "ethers"
+import FusionCredit from "../artifacts/contracts/FusionCredit.sol/FusionCredit.json"
 
 export default function Home() {
   const web3React = useWeb3React()
@@ -39,6 +41,34 @@ export default function Home() {
       }
     }
     return -1
+  }
+
+  function genProof(evalTime, accounts) {
+    const cap300 = (val) => (val > 300) ? 300 : Math.floor(val)
+
+    const scores = accounts.map(account => 
+      cap300((evalTime - account.creationTime) / 3600 / 24 / 2) +
+      cap300(account.transactionCount) + 
+      cap300(account.balanceAmount / 33)
+    )
+
+    const scoreInfo = scores.reduce((acc, curr) => {
+      const score_mapped = 1000 + (1000 - curr); // mapping score to [1000, 2000] in reverse
+      const accumulator_new = Math.floor(acc.accumulator * score_mapped / 1000); // use signal for quadratic limitation
+      const scale_new = acc.scale * 2;
+      return {accumulator: accumulator_new, scale: scale_new}
+    }, {accumulator: 1000, scale: 1})
+
+    const factor = scoreInfo.scale - 1;
+    const mapped = scoreInfo.accumulator - 1000;
+    const score = 1000 - Math.floor(mapped / factor);
+
+    return {
+      score: score,
+      version: 1,
+      timestamp: evalTime,
+      proof: [0,0,0,0,0,0,0,0],
+    }
   }
 
   async function addAccount() {
@@ -92,11 +122,30 @@ export default function Home() {
       dataSig: data.signature,
     }
     console.log(newAccount)
-    setAccounts(accounts.concat(newAccount))
+    const newAccounts = accounts.concat(newAccount)
+    setAccounts(newAccounts)
+
+    const proofData = genProof(scoreTimestamp, newAccounts)
+    console.log(proofData)
   }
 
   async function makeFusion() {
+    const contractAddress = "0x570873f17e7c7b7736d79f357D36299ca2d13311"
+    //const contractAddress = process.env.FUSION_CREDIT_CONTRACT
+    //console.log(contractAddress)
 
+    const proofData = genProof(scoreTimestamp, accounts)
+    const contract = new Contract(contractAddress, FusionCredit.abi, web3React.library.getSigner())
+
+    try {
+      const tx = await contract.setScore(proofData.score, proofData.version, proofData.timestamp, proofData.proof)
+      console.log(tx.hash)
+      await tx.wait();
+    }
+    catch (err) {
+      console.log(err)
+      return
+    }
   }
 
   return (
