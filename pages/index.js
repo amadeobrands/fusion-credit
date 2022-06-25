@@ -9,6 +9,7 @@ export default function Home() {
   const web3React = useWeb3React()
   const [accounts, setAccounts] = React.useState([])
   const [chains, setChains] = React.useState([])
+  const [scoreTimestamp, setScoreTimestamp] = React.useState(Date.now())
   const currAccountIndex = findAccount()
   const currChainIndex = findChain(web3React.chainId)
   const currChainName = (currChainIndex == -1) ? "Unsupported! Please select another Chain" : chains[currChainIndex].label
@@ -41,11 +42,22 @@ export default function Home() {
   }
 
   async function addAccount() {
-    if (currAccountIndex != -1)
+    if (currAccountIndex != -1) // an existing account is selected
       return
     const chainIndex = findChain(web3React.chainId)
-    if (chainIndex == -1)
+    if (chainIndex == -1) // chain not supported
       return
+
+    const signer = web3React.library.getSigner()
+    let signature;
+    try {
+      signature = await signer.signMessage("Fusion Credit: Sign this message to prove you own this account!")
+    } catch (err) {
+      // TODO: Add user notification UI
+      console.log("Message not signed successfully.")
+      console.log(err)
+      return     
+    }
 
     const newAccount = {
       chainId: web3React.chainId,
@@ -53,6 +65,7 @@ export default function Home() {
       network: chains[chainIndex].label,
       logo: chains[chainIndex].logo_url,
       isTest: chains[chainIndex].is_testnet,
+      signature: signature,
     }
 
     // const res = await fetch('/api/hello', {
@@ -100,7 +113,7 @@ export default function Home() {
 
           <p>{accounts.length} Account(s) Added. To add more, select a new account with your wallet</p>
           {accounts.map(account =>  
-            <NetworkAddress account={account} />
+            <NetworkAddress key={"C"+account.chainId+"A"+account.address} account={account} />
           )}
 
           {currAccountIndex != -1 ?
