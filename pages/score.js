@@ -8,11 +8,9 @@ export default function Score() {
   const web3React = useWeb3React()
   const [score, setScore] = React.useState({score: null, version: null, timestamp: null})
 
-  console.log(score)
-
   async function getScore() {
     // Get score from blockchain
-    
+
     setScore({score: 600, version: 1, timestamp: 1656167800})
   }
 
