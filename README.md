@@ -1,4 +1,4 @@
-![logo](../img/fusion-credit-wb.png)
+<img src="img/fusion-credit-wb.png" width="300">
 
-# fusion-credit
+# Fusion-Credit
 Universal reputation score with privacy in mind
