@@ -251,7 +251,7 @@ export default function handler(req, res) {
     {
       "name": "harmony-testnet",
       "chain_id": "1666700000",
-      "is_testnet": false,
+      "is_testnet": true,
       "db_schema_name": "chain_harmony_testnet",
       "label": "Harmony Testnet",
       "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/harmony-logo.svg"
@@ -279,6 +279,22 @@ export default function handler(req, res) {
       "db_schema_name": "chain_covint1",
       "label": "Covalent Internal V1",
       "logo_url": "https://www.covalenthq.com/static/images/covalent-logomark.png"
-    }
+    },
+    {
+      "name": "optimism-mainnet",
+      "chain_id": "10",
+      "is_testnet": false,
+      "db_schema_name": "chain_harmony_mainnet",
+      "label": "Optimism Mainnet",
+      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/optimism-logo.svg"
+    },
+    {
+      "name": "optimism-testnet",
+      "chain_id": "69",
+      "is_testnet": true,
+      "db_schema_name": "chain_harmony_testnet",
+      "label": "Optimism Kovan Testnet",
+      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/optimism-logo.svg"
+    },    
   ])
 }
