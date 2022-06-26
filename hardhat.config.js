@@ -51,5 +51,9 @@ module.exports = {
       url: "https://hackathon.skalenodes.com/v1/downright-royal-saiph",
       accounts: [process.env.DEPLOYER_ADDRESS]
     },
+    "gnosis-test": {
+      url: "https://sokol.poa.network",
+      accounts: [process.env.DEPLOYER_ADDRESS]
+    },
   }
 };
