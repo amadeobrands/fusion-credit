@@ -99,7 +99,7 @@ export default function Home() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chainId: web3React.chainId,
+        chainId: ([10, 69].includes(web3React.chainId)) ? 80001 : web3React.chainId,
         address: web3React.account,
         signature: signature,        
       }),
