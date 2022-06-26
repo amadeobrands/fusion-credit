@@ -25,8 +25,8 @@ const EthAccount = ({ showNetwork=false, showAccount=false, showDisconnect=true 
   }
   else {
     return <div>
-      <div className={styles.button} onClick={() => {web3React.activate(connectors.injected);}}>Use MetaMask</div>
-      <div className={styles.button} onClick={() => {web3React.activate(connectors.walletConnect);}}>Use Wallet Connect</div>
+      <div className={styles.buttonct} onClick={() => {web3React.activate(connectors.injected);}}><img src="/img/metamask-logo-png-transparent.png" width="48"></img><br></br>Use MetaMask</div>
+      <div className={styles.buttonct} onClick={() => {web3React.activate(connectors.walletConnect);}}><img src="/img/wallet-connect.png" width="60"></img><br></br>Use Wallet Connect</div>
     </div>
   }
 }
