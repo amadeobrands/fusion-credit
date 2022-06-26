@@ -30,10 +30,6 @@ Requirements:
 $ npm install
 $ npm run dev
 ```
-## Contracts
-  * FusionCredit.sol
-  * FusionScoreMockVerifier.sol
-  * FusionScoreV1Verifier.sol
 
 ## Resources
 Live Demo!<br>
