@@ -25,6 +25,11 @@ export default function Score() {
     setScore({address: address, score: parseInt(res.score), version: parseInt(res.version), timestamp: parseInt(res.timestamp)})
   }
 
+  async function sendNotification(address, sender) {
+    const response = await fetch(`/api/notify?address=${address}&sender=${sender}`)
+    console.log(response)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
