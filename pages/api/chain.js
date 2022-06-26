@@ -300,21 +300,22 @@ export default function handler(req, res) {
       "fusion_score_contract": "0x570873f17e7c7b7736d79f357D36299ca2d13311"
     },   
     {
-      "name": "gnosis-mainnet",
-      "chain_id": "1111111111111",
-      "is_testnet": false,
-      "db_schema_name": "chain_gnosis_mainnet",
-      "label": "Gnosis Mainnet",
-      "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png"
-    },
-    {
-      "name": "gnosis-testnet",
+      "name": "gnosis-test",
       "chain_id": "2222222222222222",
       "is_testnet": true,
       "db_schema_name": "chain_gnosis_testnet",
       "label": "Gnosis Kovan Testnet",
       "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png",
       "fusion_score_contract": "0x570873f17e7c7b7736d79f357D36299ca2d13311"
-    },        
+    },
+    {
+      "name": "skale-test",
+      "chain_id": "0x40b9020d",
+      "is_testnet": true,
+      "db_schema_name": "chain_skale_test",
+      "label": "Skale Testnet",
+      "logo_url": "https://tinyurl.com/yj58ytfe",
+      "fusion_score_contract": "0xc33B93EC3E220A4B6d1BA0a74FDEA23bBf9db099"
+    },                
   ])
 }

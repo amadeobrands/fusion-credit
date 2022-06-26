@@ -46,6 +46,14 @@ module.exports = {
     "ethereum-mainnet": {
       url: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
       accounts: [process.env.DEPLOYER_ADDRESS]
-    },             
+    },
+    "skale-test": {
+      url: "https://hackathon.skalenodes.com/v1/downright-royal-saiph",
+      accounts: [process.env.DEPLOYER_ADDRESS]
+    },
+    "gnosis-test": {
+      url: "https://sokol.poa.network",
+      accounts: [process.env.DEPLOYER_ADDRESS]
+    },
   }
 };
