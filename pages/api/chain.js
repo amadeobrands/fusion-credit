@@ -298,6 +298,23 @@ export default function handler(req, res) {
       "label": "Optimism Kovan Testnet",
       "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png",
       "fusion_score_contract": "0x570873f17e7c7b7736d79f357D36299ca2d13311"
-    },    
+    },   
+    {
+      "name": "gnosis-mainnet",
+      "chain_id": "1111111111111",
+      "is_testnet": false,
+      "db_schema_name": "chain_gnosis_mainnet",
+      "label": "Gnosis Mainnet",
+      "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png"
+    },
+    {
+      "name": "gnosis-testnet",
+      "chain_id": "2222222222222222",
+      "is_testnet": true,
+      "db_schema_name": "chain_gnosis_testnet",
+      "label": "Gnosis Kovan Testnet",
+      "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png",
+      "fusion_score_contract": "0x570873f17e7c7b7736d79f357D36299ca2d13311"
+    },        
   ])
 }

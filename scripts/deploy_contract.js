@@ -11,7 +11,7 @@ async function deploy(contractName, ...args) {
 }
 
 async function main() {
-  const verifier = await deploy('FusionScoreV1Verifier')
+  const verifier = await deploy('FusionScoreMockVerifier')
   const fusionCredit = await deploy('FusionCredit', verifier.address)
 
   return fusionCredit
