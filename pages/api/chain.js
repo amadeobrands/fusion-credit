@@ -315,6 +315,15 @@ export default function handler(req, res) {
       "label": "Gnosis Kovan Testnet",
       "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png",
       "fusion_score_contract": "0x570873f17e7c7b7736d79f357D36299ca2d13311"
-    },        
+    },
+    {
+      "name": "skale-test",
+      "chain_id": "0x40b9020d",
+      "is_testnet": true,
+      "db_schema_name": "chain_skale_test",
+      "label": "Skale Testnet",
+      "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png",
+      "fusion_score_contract": "0x570873f17e7c7b7736d79f357D36299ca2d13311"
+    },                
   ])
 }
