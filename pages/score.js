@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css"
 import EthAccount from "../components/EthAccount"
 import ScoreCard from "../components/ScoreCard"
 import { Contract, utils } from "ethers"
-import FusionCredit from "../artifacts/contracts/FusionCredit.sol/FusionCredit.json"
+import FusionCredit from "../public/FusionCredit.json"
 
 export default function Score() {
   const web3React = useWeb3React()
@@ -16,6 +16,7 @@ export default function Score() {
 
     const address = utils.getAddress(event.target.address.value)
     console.log("Getting score for address: " + address)
+    console.log(FusionCredit)
 
     const contractAddress = "0x570873f17e7c7b7736d79f357D36299ca2d13311"
     const contract = new Contract(contractAddress, FusionCredit.abi, web3React.library)

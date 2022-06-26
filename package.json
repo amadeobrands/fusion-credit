@@ -4,7 +4,7 @@
     "description": "Universal reputation score with privacy in mind",
     "main": "index.js",
     "scripts": {
-        "compile": "npx hardhat compile",
+        "compile": "npx hardhat compile && cp artifacts/contracts/FusionCredit.sol/FusionCredit.json public",
         "test": "npx hardhat test",
         "deploy-ethereum-test": "npx hardhat run scripts/deploy_contract.js --network ethereum-kovan",
         "deploy-ethereum-main": "npx hardhat run scripts/deploy_contract.js --network ethereum-mainnet",

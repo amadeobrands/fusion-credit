@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css"
 import EthAccount from "../components/EthAccount"
 import NetworkAddress from "../components/NetworkAddress"
 import { Contract } from "ethers"
-import FusionCredit from "../artifacts/contracts/FusionCredit.sol/FusionCredit.json"
+import FusionCredit from "../public/FusionCredit.json"
 import ScoreCard from "../components/ScoreCard"
 
 export default function Home() {
