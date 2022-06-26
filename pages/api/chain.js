@@ -14,7 +14,8 @@ export default function handler(req, res) {
       "is_testnet": true,
       "db_schema_name": "chain_eth_kovan",
       "label": "Ethereum Testnet Kovan",
-      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/ethereum-eth-logo.png"
+      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/ethereum-eth-logo.png",
+      "fusion_score_contract": "0xc33B93EC3E220A4B6d1BA0a74FDEA23bBf9db099"
     },
     {
       "name": "matic-mainnet",
@@ -30,7 +31,8 @@ export default function handler(req, res) {
       "is_testnet": true,
       "db_schema_name": "chain_matic_mumbai",
       "label": "Matic Testnet Mumbai",
-      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/polygon-matic-logo.png"
+      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/polygon-matic-logo.png",
+      "fusion_score_contract": "0xFCC340D75fE5BCdae95CD3E694b93eB7706F5aE5"
     },
     {
       "name": "avalanche-mainnet",
@@ -286,7 +288,7 @@ export default function handler(req, res) {
       "is_testnet": false,
       "db_schema_name": "chain_harmony_mainnet",
       "label": "Optimism Mainnet",
-      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/optimism-logo.svg"
+      "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png"
     },
     {
       "name": "optimism-testnet",
@@ -294,7 +296,8 @@ export default function handler(req, res) {
       "is_testnet": true,
       "db_schema_name": "chain_harmony_testnet",
       "label": "Optimism Kovan Testnet",
-      "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/optimism-logo.svg"
+      "logo_url": "https://raw.githubusercontent.com/amadeobrands/fusion-credit/main/img/logo-op.png",
+      "fusion_score_contract": "0x570873f17e7c7b7736d79f357D36299ca2d13311"
     },    
   ])
 }
