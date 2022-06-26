@@ -188,3 +188,13 @@
 .accounttgt {
   color: #95eebf;
 }
+
+.ethaddress {
+  font-size: 0.6em;
+  color: #969897;
+}
+
+.resulttitle {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
