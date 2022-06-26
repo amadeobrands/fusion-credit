@@ -48,7 +48,14 @@ export default function Score() {
 
           { score.score > 0 && <ScoreCard score={score} /> }
 
-          { score.score === 0 && <p>You don't have a score</p> }
+          { score.score === 0 && <p>This address don't have a score</p> }
+
+          { score.score !== null && 
+            <div className={styles.button}>
+              <img src="/img/fusion-credit-wb.png" width="250"></img>
+              Contact Owner to create or update score
+            </div>
+          }
 
           { score.score === null && 
             <form className={styles.formctn} onSubmit={getScore}>
