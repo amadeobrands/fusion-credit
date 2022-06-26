@@ -7,12 +7,19 @@ import NetworkAddress from "../components/NetworkAddress"
 import { Contract } from "ethers"
 import FusionCredit from "../public/FusionCredit.json"
 import ScoreCard from "../components/ScoreCard"
+// import worldID from "@worldcoin/id"
+
+// worldID.init("world-id-container", {
+//   enable_telemetry: true,
+//   action_id: "wid_BPZsRJANxct2cZxVRyh80SFG",
+// });
 
 export default function Home() {
   const web3React = useWeb3React()
   const [accounts, setAccounts] = React.useState([])
   const [chains, setChains] = React.useState([])
   const [score, setScore] = React.useState(null)
+  const [worldID, setWorldID] = React.useState(null)
   const [scoreTimestamp, setScoreTimestamp] = React.useState(Date.now())
   const currAccountIndex = findAccount()
   const currChainIndex = findChain(web3React.chainId)
@@ -157,6 +164,16 @@ export default function Home() {
     }
   }
 
+  // async function linkWorldID() {
+  //   try {
+  //     const result = await worldID.enable();
+  //     console.log("World ID verified successfully:", result);
+  //     setWorldID(result)
+  //   } catch (failure) {
+  //     console.warn("World ID verification failed:", failure);
+  //   }    
+  // }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -185,6 +202,17 @@ export default function Home() {
         </>}
 
         { web3React.active && score === null && <>
+
+          { // Having issues with World ID. All codes related to WorldID are commented out
+          /* <div className={styles.float}>
+            { worldID === null &&
+              <div className={styles.button} onClick={linkWorldID}>Connect Score to World ID</div>
+            }
+            { worldID !== null &&
+              <div>Your Fusion Score will be linked to your World ID</div>
+            }
+          </div>
+           */}
 
           <p>{accounts.length} Account(s) Added. To add more, select a new account with your wallet</p>
           {accounts.map(account =>  

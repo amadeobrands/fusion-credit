@@ -199,10 +199,6 @@
   margin-bottom: 10px;
 }
 
-
-
-
-
 .buttonct {
   background-color: #1F3D5A;
   color: white;
@@ -228,4 +224,11 @@
 .buttonct:active {
   position: relative;
   top: 2px;
+}
+
+.float{
+	position:fixed;
+	width:200px;
+	top:200px;
+	left:80px;
 }
