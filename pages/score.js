@@ -3,6 +3,7 @@ import React from "react"
 import { useWeb3React } from "@web3-react/core"
 import styles from "../styles/Home.module.css"
 import EthAccount from "../components/EthAccount"
+import ScoreCard from "../components/ScoreCard"
 import { Contract, utils } from "ethers"
 import FusionCredit from "../artifacts/contracts/FusionCredit.sol/FusionCredit.json"
 
@@ -20,7 +21,7 @@ export default function Score() {
     const contract = new Contract(contractAddress, FusionCredit.abi, web3React.library)
 
     const res = await contract.getScore(address)
-    setScore({score: parseInt(res.score), version: parseInt(res.version), timestamp: parseInt(res.timestamp)})
+    setScore({address: address, score: parseInt(res.score), version: parseInt(res.version), timestamp: parseInt(res.timestamp)})
   }
 
   return (
@@ -45,7 +46,7 @@ export default function Score() {
 
         {web3React.active && <>
 
-          { score.score > 0 && <div><p>Your score is {score.score}</p></div> }
+          { score.score > 0 && <ScoreCard score={score} /> }
 
           { score.score === 0 && <p>You don't have a score</p> }
 

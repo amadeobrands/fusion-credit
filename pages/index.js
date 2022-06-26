@@ -6,11 +6,13 @@ import EthAccount from "../components/EthAccount"
 import NetworkAddress from "../components/NetworkAddress"
 import { Contract } from "ethers"
 import FusionCredit from "../artifacts/contracts/FusionCredit.sol/FusionCredit.json"
+import ScoreCard from "../components/ScoreCard"
 
 export default function Home() {
   const web3React = useWeb3React()
   const [accounts, setAccounts] = React.useState([])
   const [chains, setChains] = React.useState([])
+  const [score, setScore] = React.useState(null)
   const [scoreTimestamp, setScoreTimestamp] = React.useState(Date.now())
   const currAccountIndex = findAccount()
   const currChainIndex = findChain(web3React.chainId)
@@ -134,13 +136,20 @@ export default function Home() {
     //const contractAddress = process.env.FUSION_CREDIT_CONTRACT
     //console.log(contractAddress)
 
+    const signer = web3React.library.getSigner()
     const proofData = genProof(scoreTimestamp, accounts)
-    const contract = new Contract(contractAddress, FusionCredit.abi, web3React.library.getSigner())
+    const contract = new Contract(contractAddress, FusionCredit.abi, signer)
 
     try {
       const tx = await contract.setScore(proofData.score, proofData.version, proofData.timestamp, proofData.proof)
       console.log(tx.hash)
       await tx.wait();
+      setScore({
+        score: proofData.score,
+        version: proofData.version,
+        timestamp: proofData.timestamp,
+        address: await signer.getAddress(),
+      })
     }
     catch (err) {
       console.log(err)
@@ -170,7 +179,12 @@ export default function Home() {
 
         <EthAccount showDisconnect={false}/>
 
-        {web3React.active && <>
+        { score && <>
+          <div className={styles.resulttitle}>Your Fusion Score is created successfully</div>
+          <ScoreCard score={score}/>
+        </>}
+
+        { web3React.active && score === null && <>
 
           <p>{accounts.length} Account(s) Added. To add more, select a new account with your wallet</p>
           {accounts.map(account =>  
