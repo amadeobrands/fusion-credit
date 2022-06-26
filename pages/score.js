@@ -48,7 +48,7 @@ export default function Score() {
 
           { score.score > 0 && <ScoreCard score={score} /> }
 
-          { score.score === 0 && <p>This address don't have a score</p> }
+          { score.score === 0 && <p>This address don&apos;t have a score</p> }
 
           { score.score !== null && 
             <div className={styles.button}>
