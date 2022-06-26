@@ -9,7 +9,7 @@ Fusion Credit creates a credit score called the “FusionScore” based on multi
 Frontend: Next.js, Web3-React, SnarkJS, circom
 Backend: Solidity, Hardhat, SnartJS Verifier
 ~~~
-<img src="img/fusion-credit-wb.png">
+<img src="img/2022-06-25%2021.16.01.jpg">
 
 The high level FusionScore is rule based and can be made up with the following logical components. Machine learning can be used to create individual component scores.<br>
 Longevity – Amount of time since the account was created<br>
@@ -36,7 +36,7 @@ $ npm run dev
   * FusionScoreV1Verifier.sol
 
 ## Resources
-Live Demo!
+Live Demo!<br>
 <a href="https://github.com/amadeobrands/fusion-credit/blob/main/presentation/Fusion%20Credit%20Intro%20-%20Brainstorm%20ideas.pdf">Fusion Credit brainstorm paper</a>
 
 
