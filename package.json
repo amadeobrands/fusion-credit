@@ -14,6 +14,8 @@
         "deploy-polygon-main": "npx hardhat run scripts/deploy_contract.js --network polygon-mainnet",
         "deploy-gnosis-test": "npx hardhat run scripts/deploy_contract.js --network gosnis-testnet",
         "deploy-gnosis-main": "npx hardhat run scripts/deploy_contract.js --network gosnis-mainnet",
+        "deploy-skale-test": "npx hardhat run scripts/deploy_contract.js --network skale-testnet",
+        "deploy-skale-main": "npx hardhat run scripts/deploy_contract.js --network skale-mainnet",        
         "deploy-harmony-test": "npx hardhat run scripts/deploy_contract.js --network harmony-testnet",
         "deploy-harmony-main": "npx hardhat run scripts/deploy_contract.js --network harmony-mainnet",
         "dev": "next dev",
