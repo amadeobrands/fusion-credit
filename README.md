@@ -36,8 +36,10 @@ $ npm run dev
 <a href="https://github.com/amadeobrands/fusion-credit/blob/main/contracts/FusionScoreV1Verifier.sol">FusionScoreV1Verifier.sol</a>
 
 ## Resources
-Live Demo!<br>
-<a href="https://github.com/amadeobrands/fusion-credit/blob/main/presentation/Fusion%20Credit%20Intro%20-%20Brainstorm%20ideas.pdf">Fusion Credit brainstorm paper</a>
+<a href="https://fusion-credit-blrc4sy5e-amadeobrands.vercel.app/">Live Demo!</a><br>
+<a href="https://www.loom.com/share/02b0862eba4b44a58e4c60c23e9074b7">Demo Video</a><br>
+<a href="https://github.com/amadeobrands/fusion-credit/blob/main/presentation/Fusion%20Credit%20Intro%20-%20Brainstorm%20ideas.pdf">Fusion Credit brainstorm paper</a><br>
+<a href="https://github.com/amadeobrands/fusion-credit/blob/main/presentation/Fusion%20Credit%20-%20FusionScore%20V1.pdf">Slide deck Fusion Credit</a>
 
 
 
