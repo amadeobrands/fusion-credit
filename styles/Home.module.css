@@ -198,3 +198,34 @@
   font-size: 1.5em;
   margin-bottom: 10px;
 }
+
+
+
+
+
+.buttonct {
+  background-color: #1F3D5A;
+  color: white;
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 250px;
+  font-size: 1.2em;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.buttonct:hover,
+.buttonct:focus,
+.buttonct:active {
+  color: #86bbf8;
+  border-color: #86bbf8;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.buttonct:active {
+  position: relative;
+  top: 2px;
+}

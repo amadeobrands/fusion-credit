@@ -51,8 +51,8 @@ export default function Score() {
           { score.score === 0 && <p>This address don&apos;t have a score</p> }
 
           { score.score !== null && 
-            <div className={styles.button}>
-              <img src="/img/fusion-credit-wb.png" width="250"></img>
+              <div className={styles.buttonct}>
+              <img src="/img/ens-logo.png" width="100"></img><br></br>
               Contact Owner to create or update score
             </div>
           }
