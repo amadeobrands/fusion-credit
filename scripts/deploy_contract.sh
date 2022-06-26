@@ -1,5 +1,5 @@
 #!/bin/bash
-NETWORK=optimism-kovan
+NETWORK=harmony-testnet
 
 if [ ! -z $1 ]; then
     NETWORK=$1
