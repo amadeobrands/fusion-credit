@@ -31,6 +31,10 @@ $ npm install
 $ npm run dev
 ```
 
+## Contracts
+<a href="https://github.com/amadeobrands/fusion-credit/blob/main/contracts/FusionCredit.sol">FusionCredit.sol</a>
+<a href="https://github.com/amadeobrands/fusion-credit/blob/main/contracts/FusionScoreV1Verifier.sol">FusionScoreV1Verifier.sol</a>
+
 ## Resources
 Live Demo!<br>
 <a href="https://github.com/amadeobrands/fusion-credit/blob/main/presentation/Fusion%20Credit%20Intro%20-%20Brainstorm%20ideas.pdf">Fusion Credit brainstorm paper</a>
