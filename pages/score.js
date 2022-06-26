@@ -38,7 +38,7 @@ export default function Score() {
         </h1>
 
         <p className={styles.description}>
-          Retrieve Fusion Credit Score by entering an address
+          Retrieve Fusion Credit Score by entering an address 🚀🚀🚀
         </p>
 
         <EthAccount showDisconnect={false}/>

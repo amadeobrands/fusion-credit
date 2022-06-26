@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.main h1 {
+  font-size: 2.5rem;
+}
+
 .footer {
   display: flex;
   flex: 1;
