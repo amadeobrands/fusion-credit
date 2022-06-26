@@ -5,9 +5,6 @@ import { useWeb3React } from "@web3-react/core"
 const NetworkAddress = ({ account, onDelete }) => {
   const web3React = useWeb3React()
 
-  console.log(account)
-  console.log(web3React)
-
   return <div className={styles.card}>
     <p>Network: {account.network}</p>
     <p>Address: {account.address}</p>
