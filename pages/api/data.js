@@ -45,9 +45,9 @@ export default async function handler(req, res) {
   const result = {
     chainId: req.body.chainId,
     address: req.body.address,
-    creationTime: creationTime,
-    transactionCount: transactionCount,
-    balanceAmount: balanceAmount,
+    creationTime: Date.now() - 3600 * 24 * 365, //creationTime,
+    transactionCount: 200, //transactionCount,
+    balanceAmount: 700, //balanceAmount,
     signature: "a483928b3746583473646374665483",
   }
   console.log(result)
