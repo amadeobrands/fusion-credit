@@ -32,12 +32,13 @@ export default function Score() {
       </Head>
 
       <main className={styles.main}>
+        <img src="/img/fusion-credit-wb.png" width="250"></img>
         <h1 className={styles.title}>
           Retrieve Fusion Credit Score
         </h1>
 
         <p className={styles.description}>
-          Retrieve Fusion Credit Score by entering an address
+          Retrieve Fusion Credit Score by entering an address 🚀🚀🚀
         </p>
 
         <EthAccount showDisconnect={false}/>

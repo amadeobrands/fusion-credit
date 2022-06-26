@@ -157,6 +157,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <img src="/img/fusion-credit-wb.png" width="250"></img>
         <h1 className={styles.title}>
           Welcome to Fusion Credit!
         </h1>
